@@ -1,0 +1,9 @@
+{
+    "name": "Keturrate masina",
+    "price": {
+        "value": 10,
+        "curency": "Eur"
+    },
+    "inStock": 4,
+    "sold": 7
+}
