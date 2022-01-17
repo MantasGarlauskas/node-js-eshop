@@ -1,6 +1,7 @@
 // console.clear();
 const readFile = require('./lib/readFile.js');
 const jsonParse = require('./lib/jsonParse.js');
+const printlist = require('./lib/printList.js');
 
 (async() => {
 
@@ -20,14 +21,11 @@ const jsonParse = require('./lib/jsonParse.js');
         }
     }
     console.log(prekiuInfo);
+    console.log('"Univermagas" pardavime turi:');
+    console.log('---------------')
+    console.log(printlist(prekiuInfo))
+    console.log('---------------')
 
-    // console.log(await readFile('arbata'));
-    // console.log(await readFile('kvepalai'));
-    // console.log(await readFile('masinos'));
-    // console.log(await readFile('kebabas'));
-
-    // const parduotuve = [];
-    // console.log(parduotuve);
 })();
 /*
 
