@@ -7,6 +7,9 @@ class SumTotal {
         }
         return totalProfit;
     }
+    static totalShopProfit(a, b) {
+        return a + b
+    }
 
 }
 module.exports = SumTotal;
