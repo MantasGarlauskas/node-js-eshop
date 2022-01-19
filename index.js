@@ -5,6 +5,7 @@ const readFile = require("./lib/readFile.js");
 const instockTotalCOunt = require("./lib/instockTotalCOunt.js");
 const SumTotal = require("./math/sum.js");
 const soldTotalCount = require("./lib/soldTotalCount.js");
+const futureProfit = require("./lib/futureProfit.js");
 
 (async() => {
     const goods = [
@@ -89,7 +90,7 @@ const soldTotalCount = require("./lib/soldTotalCount.js");
         }
         goodsInfo.push(itemObj);
     }
-    console.log(goodsInfo)
+    // console.log(goodsInfo)
     console.log('"Univermagas" pardavime turi:');
     console.log('-----------------------------');
     console.log(printList(goodsInfo));
@@ -98,6 +99,6 @@ const soldTotalCount = require("./lib/soldTotalCount.js");
     console.log(`- turimu prekiu sandelyje: ${instockTotalCOunt(goodsInfo)}`);
     console.log(`- parduotu prekiu: ${soldTotalCount(goodsInfo)}`);
     console.log(`- suprekiauta suma: ${SumTotal.totalProfit(goodsInfo)} ${availableCurrency[0]}`);
-    console.log(`- galimu pardavimu: [total pinigu] [valiuta]`);
-    console.log(`- maksimalus galima parduotuves apyvarta: [total pinigu] [valiuta]`);
+    console.log(`- galimu pardavimu: ${futureProfit(goodsInfo)} ${availableCurrency[0]}`);
+    console.log(`- maksimalus galima parduotuves apyvarta: ${(futureProfit(goodsInfo) + SumTotal.totalProfit(goodsInfo)).toFixed(2)} ${availableCurrency[0]}`);
 })();
